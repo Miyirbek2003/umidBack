@@ -1,0 +1,41 @@
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;ampdisplay=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="assets/vendor/fonts/materialdesigniconsf861.css?id=9a16ed1a5c9f397c4fb730e76fd36384">
+<link rel="stylesheet" href="assets/vendor/libs/node-waves/node-wavesd178.css?id=aa72fb97dfa8e932ba88c8a3c04641bc">
+<!-- Core CSS -->
+<link rel="stylesheet" href="assets/vendor/css/core39e0.css?id=fdb5cd3f802d37d094730acf8fdcb33a">
+<link rel="stylesheet" href="assets/vendor/css/theme-default5761.css?id=da9b9645b9e4f480d38ea81168db36b7">
+<link rel="stylesheet" href="assets/css/demo2b5e.css?id=0f3ae65b84f44dbd4971231c5d97ac3b">
+<!-- Vendors CSS -->
+<link rel="stylesheet"
+    href="assets/vendor/libs/perfect-scrollbar/perfect-scrollbarda97.css?id=e542d5fe23051cba0a5aedb27dadd732">
+
+<!-- Vendor Styles -->
+<link rel="stylesheet" href="assets/vendor/libs/apex-charts/apex-charts.css">
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">{{ __('Verify Your Email Address') }}</div>
+
+                <div class="card-body">
+                    @if (session('resent'))
+                        <div class="alert alert-success" role="alert">
+                            {{ __('A fresh verification link has been sent to your email address.') }}
+                        </div>
+                    @endif
+
+                    {{ __('Before proceeding, please check your email for a verification link.') }}
+                    {{ __('If you did not receive the email') }},
+                    <form class="d-inline" method="POST" action="{{ route('verification.resend') }}">
+                        @csrf
+                        <button type="submit"
+                            class="btn btn-link p-0 m-0 align-baseline">{{ __('click here to request another') }}</button>.
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
