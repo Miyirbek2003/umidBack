@@ -37,12 +37,18 @@
                                         <div class="form-floating form-floating-outline mb-4">
                                             <input type="text" class="form-control" name={{ 'uz.[title]' }}
                                                 id="basic-default-fullname" placeholder="Ism familiya">
+                                            @error('uz.[title]')
+                                                <p class="help-block text-danger">{{ $message }}</p>
+                                            @enderror
                                             <label for="basic-default-fullname">Ism familiya</label>
                                         </div>
                                         <div class="form-floating form-floating-outline mb-4">
                                             <textarea type="text" class="form-control h-px-75" name={{ 'uz.[description]' }} id="basic-default-fullname"
                                                 placeholder="Sharh">
                                             </textarea>
+                                            @error('uz.[description]')
+                                                <p class="help-block text-danger">{{ $message }}</p>
+                                            @enderror
                                             <label for="basic-default-fullname">Sharh</label>
                                         </div>
                                     </div>
@@ -54,12 +60,18 @@
                                         <div class="form-floating form-floating-outline mb-4">
                                             <input type="text" class="form-control" name={{ 'ru.[title]' }}
                                                 id="basic-default-fullname" placeholder="Фамилия имя">
+                                            @error('ru.[title]')
+                                                <p class="help-block text-danger">{{ $message }}</p>
+                                            @enderror
                                             <label for="basic-default-fullname">Фамилия имя</label>
                                         </div>
                                         <div class="form-floating form-floating-outline mb-4">
                                             <textarea type="text" class="form-control h-px-75" name={{ 'ru.[description]' }} id="basic-default-fullname"
                                                 placeholder="Отзыв">
                                         </textarea>
+                                            @error('ru.[description]')
+                                                <p class="help-block text-danger">{{ $message }}</p>
+                                            @enderror
                                             <label for="basic-default-fullname">Отзыв</label>
                                         </div>
 
@@ -82,7 +94,10 @@
                                 <div class="mb-3">
                                     <label for="formFile" class="form-label">Формат (.jpg, .jpeg, .png)</label>
                                     <input class="form-control" type="file" name="image" value="{{ old('image') }}"
-                                        required id="image" onchange="previewFile()">
+                                        id="image" onchange="previewFile()">
+                                    @error('image')
+                                        <p class="help-block text-danger">{{ $message }}</p>
+                                    @enderror
                                 </div>
                             </div>
                             <img src="{{ old('image') ? asset(old('image')) : asset('assets/img/no-image.jpg') }}"

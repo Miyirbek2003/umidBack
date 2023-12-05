@@ -43,8 +43,10 @@ class ImageSlideController extends Controller
     public function store(Request $request)
     {
 
-        $data = $request->all();
-
+        $data = $request->validate([
+            'image-do' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
+            'image-posle' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048'
+        ]);
         $languages = config('translatable.languages');
 
         $file1 = $request->file('image-do');

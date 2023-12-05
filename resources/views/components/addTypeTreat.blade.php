@@ -45,22 +45,32 @@
                                         <div class="row">
                                             <div class="form-floating col-xl-6 form-floating-outline mb-4">
                                                 <input type="text" class="form-control" name={{ 'uz.[title]' }}
-                                                    id="basic-default-fullname" placeholder="Mavzu" required>
+                                                    id="basic-default-fullname" placeholder="Mavzu">
+                                                @error('uz.[title]')
+                                                    <p class="help-block text-danger">{{ $message }}</p>
+                                                @enderror
                                                 <label for="basic-default-fullname">Mavzu</label>
                                             </div>
                                             <select class="form-select form-floating mb-4 col-xl-6" style="width: auto"
                                                 name="treatment_id" id="exampleFormControlSelect1"
-                                                aria-label="Default select example" required>
+                                                aria-label="Default select example">
                                                 <option selected="" disabled>Kategoriya tanlang</option>
                                                 @foreach ($treatment as $treat)
                                                     <option class="dropdown-item" value="{{ $treat->id }}">
                                                         {{ $treat->title }}</option>
                                                 @endforeach
+
                                             </select>
+                                            @error('treatment_id')
+                                                <p class="help-block text-danger">{{ $message }}</p>
+                                            @enderror
                                         </div>
                                         <div>
                                             <textarea class="form-control tiny-editor" id="editor12" cols='30' name={{ 'uz.[body]' }} placeholder="Kontent"
                                                 rows="10"></textarea>
+                                            @error('uz.[body]')
+                                                <p class="help-block text-danger">{{ $message }}</p>
+                                            @enderror
                                             <label for="basic-default-bio">Kontent</label>
                                         </div>
                                     </div>
@@ -73,6 +83,9 @@
                                             <div class="form-floating col-xl-6 form-floating-outline mb-4">
                                                 <input type="text" class="form-control" name={{ 'ru.[title]' }}
                                                     id="basic-default-fullname" placeholder="Тема">
+                                                @error('ru.[title]')
+                                                    <p class="help-block text-danger">{{ $message }}</p>
+                                                @enderror
                                                 <label for="basic-default-fullname">Тема</label>
                                             </div>
                                             <select class="form-select form-floating mb-4 col-xl-6" style="width: auto"
@@ -83,10 +96,16 @@
                                                         {{ $treat->translate('ru')->title }}</option>
                                                 @endforeach
                                             </select>
+                                            @error('treatment_id')
+                                                <p class="help-block text-danger">{{ $message }}</p>
+                                            @enderror
                                         </div>
                                         <div>
                                             <textarea class="form-control tiny-editor" id="editor21" cols='30' name={{ 'ru.[body]' }} placeholder="Контент"
                                                 rows="10"></textarea>
+                                            @error('ru.[body]')
+                                                <p class="help-block text-danger">{{ $message }}</p>
+                                            @enderror
                                             <label for="basic-default-bio">Контент</label>
                                         </div>
 

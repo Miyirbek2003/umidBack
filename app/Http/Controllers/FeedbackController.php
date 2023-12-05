@@ -42,7 +42,12 @@ class FeedbackController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->all();
+        $data = $request->validate([
+            'ru.[title]' => 'required',
+            'uz.[title]' => 'required',
+            'ru.[description]' => 'required',
+            'uz.[description]' => 'required',
+        ]);
 
         $languages = config('translatable.languages');
 

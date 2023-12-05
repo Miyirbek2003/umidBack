@@ -34,7 +34,7 @@
                         </div>
                         <div class="card-body">
 
-                            <form class="browser-default-validation needs-validation row form-hand" method="POST"
+                            <form class="browser-default-validation  row form-hand" method="POST"
                                 action="{{ route('treatments.store') }}" enctype="multipart/form-data">
                                 @csrf
                                 <div class="tab-content col-xl-9">
@@ -44,7 +44,10 @@
                                                 <div class="form-floating form-floating-outline mb-4">
                                                     <input type="text" class="form-control h-px-25"
                                                         id="basic-default-bio" name={{ 'uz.[title]' }}
-                                                        placeholder="Mavzuni kiriting" rows="3" required>
+                                                        placeholder="Mavzuni kiriting" rows="3">
+                                                    @error('uz.[title]')
+                                                        <p class="help-block text-danger">{{ $message }}</p>
+                                                    @enderror
                                                     <label for="basic-default-bio">Mavzu</label>
                                                     <div class="valid-feedback">
                                                         Looks good!
@@ -60,7 +63,10 @@
                                                 <div class="form-floating form-floating-outline mb-4">
                                                     <input type="text" class="form-control h-px-25"
                                                         id="basic-default-bio" name={{ 'ru.[title]' }}
-                                                        placeholder="Mavzuni kiriting" rows="3" required>
+                                                        placeholder="Mavzuni kiriting" rows="3">
+                                                    @error('ru.[title]')
+                                                        <p class="help-block text-danger">{{ $message }}</p>
+                                                    @enderror
                                                     <label for="basic-default-bio">Тема</label>
                                                 </div>
 
@@ -84,8 +90,11 @@
                                         <div class="mb-3">
                                             <label for="formFile" class="form-label">Формат (.jpg, .jpeg,
                                                 .png)</label>
-                                            <input class="form-control" type="file" name="image" required
+                                            <input class="form-control" type="file" name="image"
                                                 value="{{ old('image') }}" id="image" onchange="previewFile()">
+                                            @error('image')
+                                                <p class="help-block text-danger">{{ $message }}</p>
+                                            @enderror
                                         </div>
                                     </div>
                                     <img src="{{ old('image') ? asset(old('image')) : asset('assets/img/no-image.jpg') }}"

@@ -42,7 +42,13 @@ class EmployeeController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->all();
+
+        $data = $request->validate([
+            'ru.[name]' => 'required',
+            'uz.[name]' => 'required',
+            'ru.[job]' => 'required',
+            'uz.[job]' => 'required',
+        ]);
 
         $languages = config('translatable.languages');
 
@@ -106,7 +112,13 @@ class EmployeeController extends Controller
         $name = time() . rand(1, 50) . '.' . $file->extension();
         $file->move(public_path('images'), $name);
         $input['image'] = "$name";
-        $data = $request->all();
+        $data = $request->validate([
+            'ru.[name]' => 'required',
+            'uz.[name]' => 'required',
+            'ru.[job]' => 'required',
+            'uz.[job]' => 'required',
+            'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
+        ]);
 
         $slide = Employee::findOrFail($employee->id);
         $slide->image = $name;

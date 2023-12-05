@@ -50,13 +50,18 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
+        $data = $request->validate([
+            'name' => 'required',
+            'phone' => 'required',
+            'treatment_id' => 'required',
+        ]);
 
         $order = new Order;
 
 
-        $order->name = $request->name;
-        $order->treatment_id = $request->treatment_id;
-        $order->phone = $request->phone;
+        $order->name = $data[0]->name;
+        $order->treatment_id = $data[0]->treatment_id;
+        $order->phone = $data[0]->phone;
 
         $order->save();
         return $request->all();

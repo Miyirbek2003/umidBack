@@ -27,7 +27,10 @@
                                 <div class="mb-3">
                                     <label for="formFile" class="form-label">Формат (.jpg, .jpeg, .png)</label>
                                     <input class="form-control" type="file" name="image-do" value="{{ old('image') }}"
-                                        required id="image1" onchange="previewFileA()">
+                                        id="image1" onchange="previewFileA()">
+                                    @error('image-do')
+                                        <p class="help-block text-danger">{{ $message }}</p>
+                                    @enderror
                                 </div>
                             </div>
                             <img src="{{ old('image') ? asset(old('image')) : asset('assets/img/no-image.jpg') }}"
@@ -41,7 +44,10 @@
                                 <div class="mb-3">
                                     <label for="formFile" class="form-label">Формат (.jpg, .jpeg, .png)</label>
                                     <input class="form-control" type="file" name="image-posle"
-                                        value="{{ old('image') }}" required id="image2" onchange="previewFileB()">
+                                        value="{{ old('image') }}" id="image2" onchange="previewFileB()">
+                                    @error('image-posle')
+                                        <p class="help-block text-danger">{{ $message }}</p>
+                                    @enderror
                                 </div>
                             </div>
                             <img src="{{ old('image') ? asset(old('image')) : asset('assets/img/no-image.jpg') }}"
