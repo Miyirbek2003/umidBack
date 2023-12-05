@@ -1,8 +1,9 @@
 @extends('layouts.app')
 
+
 @section('content')
-    <h4 class="py-3  m-0"><span class="text-muted fw-light">Слайдеры /</span> Изменить слайдер</h4>
-    <h6 class="text-muted">Слайдер</h6>
+    <h4 class="py-3  m-0"><span class="text-muted fw-light">Отзывы /</span> Добавить отзыв</h4>
+    <h6 class="text-muted">Отзыв</h6>
     <div class="row">
         <div class="col-xl-12">
             <div class="card mb-4">
@@ -25,26 +26,24 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    <form class="browser-default-validation needs-validation row" method="POST"
-                        action="{{ route('slides.update', ['slide' => $slide]) }}" enctype="multipart/form-data">
-                        @csrf
-                        @method('put')
 
+                    <form class="browser-default-validation needs-validation row" method="POST"
+                        action="{{ route('feedback.store') }}" enctype="multipart/form-data">
+                        @csrf
                         <div class="tab-content  col-xl-9">
                             <div class="tab-pane fade active   show" id="navs-top-home" role="tabpanel">
                                 <div class="card">
                                     <div class="card-body">
                                         <div class="form-floating form-floating-outline mb-4">
-                                            <textarea class="form-control h-px-75" id="basic-default-bio" name={{ 'uz.[title]' }} placeholder="Mavzuni kiriting"
-                                                rows="3" required>{{ old('uz' . '.title') ? old('uz' . '.title') : ($slide->translate('uz') != null ? $slide->translate('uz')->title : '') }}</textarea>
-                                            <label for="basic-default-bio">Mavzu</label>
-                                            <div class="valid-feedback">
-                                                Looks good!
-                                            </div>
+                                            <input type="text" class="form-control" name={{ 'uz.[title]' }}
+                                                id="basic-default-fullname" placeholder="Ism familiya">
+                                            <label for="basic-default-fullname">Ism familiya</label>
                                         </div>
                                         <div class="form-floating form-floating-outline mb-4">
-                                            <textarea class="form-control h-px-75" id="basic-default-bio" name={{ 'uz.[description]' }}
-                                                placeholder="Tavsifini kiriting" rows="3" required="">{{ old('uz' . '.description') ? old('uz' . '.description') : ($slide->translate('uz') != null ? $slide->translate('uz')->description : '') }}</textarea> <label for="basic-default-bio">Tavsifi</label>
+                                            <textarea type="text" class="form-control h-px-75" name={{ 'uz.[description]' }} id="basic-default-fullname"
+                                                placeholder="Sharh">
+                                            </textarea>
+                                            <label for="basic-default-fullname">Sharh</label>
                                         </div>
                                     </div>
                                 </div>
@@ -53,14 +52,15 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <div class="form-floating form-floating-outline mb-4">
-                                            <textarea class="form-control h-px-75" id="basic-default-bio" name={{ 'ru.[title]' }} placeholder="Тема" rows="3"
-                                                required="">{{ old('ru' . '.title') ? old('ru' . '.title') : ($slide->translate('ru') != null ? $slide->translate('ru')->title : '') }}</textarea>
-                                            <label for="basic-default-bio">Тема</label>
+                                            <input type="text" class="form-control" name={{ 'ru.[title]' }}
+                                                id="basic-default-fullname" placeholder="Фамилия имя">
+                                            <label for="basic-default-fullname">Фамилия имя</label>
                                         </div>
                                         <div class="form-floating form-floating-outline mb-4">
-                                            <textarea class="form-control h-px-75" id="basic-default-bio" name={{ 'ru.[description]' }} placeholder="Описание"
-                                                rows="3" required="">{{ old('ru' . '.description') ? old('ru' . '.description') : ($slide->translate('ru') != null ? $slide->translate('ru')->description : '') }}</textarea>
-                                            <label for="basic-default-bio">Описание</label>
+                                            <textarea type="text" class="form-control h-px-75" name={{ 'ru.[description]' }} id="basic-default-fullname"
+                                                placeholder="Отзыв">
+                                        </textarea>
+                                            <label for="basic-default-fullname">Отзыв</label>
                                         </div>
 
 
@@ -72,7 +72,7 @@
                             <div class="row mt-3">
                                 <div class="col-12">
                                     <button type="submit"
-                                        class="btn btn-primary waves-effect waves-light">Изменить</button>
+                                        class="btn btn-primary waves-effect waves-light">Добавить</button>
                                 </div>
                             </div>
                         </div>
@@ -81,16 +81,16 @@
                             <div class="card-body">
                                 <div class="mb-3">
                                     <label for="formFile" class="form-label">Формат (.jpg, .jpeg, .png)</label>
-                                    <input class="form-control"
-                                        value="{{ asset(old('image') ? old('image') : 'images/' . $slide->image) }}"
-                                        type="file" name="image" id="image" onchange="previewFile()" required
-                                        accept="image/png, image/gif, image/jpeg">
+                                    <input class="form-control" type="file" name="image" value="{{ old('image') }}"
+                                        required id="image" onchange="previewFile()">
                                 </div>
                             </div>
-                            <img src="{{ asset(old('images') ? old('images') : 'images/' . $slide->image) }}"
+                            <img src="{{ old('image') ? asset(old('image')) : asset('assets/img/no-image.jpg') }}"
                                 class="form-control readonly" id="imageShow" class="img-uploaded mb-1" width="100%"
-                                style="object-fit: contain" height="150px" alt="Suwret korinisi">
+                                style="object-fit: contain" height="150px" alt="Suwret korinisi"
+                                accept="image/png, image/gif, image/jpeg">
                         </div>
+
                     </form>
                 </div>
             </div>
@@ -104,24 +104,5 @@
 @push('body')
     <script>
         $('.slide2').addClass('active');
-    </script>
-    <script type="text/javascript">
-        $(document).ready(function(e) {
-
-
-            $('#image').change(function() {
-
-                let reader = new FileReader();
-
-                reader.onload = (e) => {
-
-                    $('#preview-image-before-upload').attr('src', e.target.result);
-                }
-
-                reader.readAsDataURL(this.files[0]);
-
-            });
-
-        });
     </script>
 @endpush

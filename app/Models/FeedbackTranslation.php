@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class SlideTranslation extends Model
+class FeedbackTranslation extends Model
 {
     use HasFactory;
     public $timestamps = false;
@@ -13,6 +13,6 @@ class SlideTranslation extends Model
 
     public function translated()
     {
-        return $this->belongsTo(Slide::class);
+        return $this->belongsTo(Feedback::class);
     }
 }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTypeTreatmentsTranslationsTable extends Migration
+class CreateFeedbackTranslationsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,14 @@ class CreateTypeTreatmentsTranslationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('type_treatments_translations', function (Blueprint $table) {
+        Schema::create('feedback_translations', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('type_treatments_id')->nullable();
-            $table->foreign('type_treatments_id')->references('id')->on('type_treatments')->onDelete('cascade');
+            $table->unsignedBigInteger('feedback_id')->nullable();
+            // $table->integer('slide_id')->unsigned()->index();
+            $table->foreign('feedback_id')->references('id')->on('feedback')->onDelete('cascade');
             $table->string('locale')->index();
             $table->string('title')->nullable();
-            $table->string('body')->nullable();
-            $table->string('slug')->nullable();
+            $table->string('description')->nullable();
             $table->timestamps();
         });
     }
@@ -32,6 +32,6 @@ class CreateTypeTreatmentsTranslationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('type_treatments_translations');
+        Schema::dropIfExists('feedback_translations');
     }
 }

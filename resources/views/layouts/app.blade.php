@@ -948,10 +948,111 @@
                         </ul>
                     </li>
 
+                    <li class="menu-item feed_main">
+                        <a href="javascript:void(0);" class="menu-link menu-toggle waves-effect">
+                            <i class="menu-icon tf-icons mdi mdi-account-outline"></i>
+                            <div>Отзывы</div>
+                        </a>
+
+
+                        <ul class="menu-sub ">
+
+
+
+                            <li class="menu-item feed1">
+                                <a href="{{ route('feedback.index') }}" class="menu-link">
+                                    <div>Отзывы</div>
+                                </a>
+
+
+                            </li>
+
+
+
+                            <li class="menu-item feed2">
+                                <a href="{{ route('feedback.create') }}" class="menu-link">
+                                    <div>Добавить отзыв</div>
+                                </a>
+
+
+                            </li>
 
 
 
 
+                        </ul>
+                    </li>
+
+                    <li class="menu-item work_main">
+                        <a href="javascript:void(0);" class="menu-link menu-toggle waves-effect">
+                            <i class="menu-icon tf-icons mdi mdi-account-outline"></i>
+                            <div>Работы</div>
+                        </a>
+
+
+                        <ul class="menu-sub ">
+
+
+
+                            <li class="menu-item work1">
+                                <a href="{{ route('imageslide.index') }}" class="menu-link">
+                                    <div>Работы</div>
+                                </a>
+
+
+                            </li>
+
+
+
+                            <li class="menu-item work2">
+                                <a href="{{ route('imageslide.create') }}" class="menu-link">
+                                    <div>Добавить фото</div>
+                                </a>
+
+
+                            </li>
+
+
+
+
+                        </ul>
+                    </li>
+
+
+
+                    <li class="menu-item order_main">
+                        <a href="javascript:void(0);" class="menu-link menu-toggle waves-effect">
+                            <i class="menu-icon tf-icons mdi mdi-account-outline"></i>
+                            <div>Заявки</div>
+                        </a>
+
+
+                        <ul class="menu-sub ">
+
+
+                            <li class="menu-item order1">
+                                <a href="{{ route('order.index') }}" class="menu-link">
+                                    <div>Ожидание</div>
+                                </a>
+
+
+                            </li>
+
+
+
+                            <li class="menu-item order2">
+                                <a href="{{ route('zeroindex') }}" class="menu-link">
+                                    <div>Связано</div>
+                                </a>
+
+
+                            </li>
+
+
+
+
+                        </ul>
+                    </li>
                 </ul>
 
             </aside>
@@ -1151,6 +1252,27 @@
             $('.treatment_main').addClass('open')
         };
 
+        if (window.location.pathname == '/feedback') {
+            $('.feed1').addClass('active')
+            $('.feed_main').addClass('open')
+        };
+
+        if (window.location.pathname == '/feedback/create') {
+            $('.feed2').addClass('active')
+            $('.feed_main').addClass('open')
+        };
+
+
+
+        if (window.location.pathname == '/order') {
+            $('.order1').addClass('active')
+            $('.order_main').addClass('open')
+        };
+
+        if (window.location.pathname == '/zeroorder') {
+            $('.order2').addClass('active')
+            $('.order_main').addClass('open')
+        };
         function previewFile() {
             var preview = document.querySelector('#imageShow');
             var file = document.querySelector('input[type=file]').files[0];

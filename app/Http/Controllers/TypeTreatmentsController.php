@@ -6,6 +6,7 @@ use App\Models\Treatments;
 use App\Models\TypeTreatments;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
+use Illuminate\Support\Str;
 
 class TypeTreatmentsController extends Controller
 {
@@ -60,6 +61,7 @@ class TypeTreatmentsController extends Controller
             if ($data[$key . '_']['title'] && $data[$key . '_']['body']) {
                 $slide->translateOrNew($key)->title = $data[$key . '_']['title'];
                 $slide->translateOrNew($key)->body = $data[$key . '_']['body'];
+                $slide->translateOrNew($key)->slug =  Str::slug($data[$key . '_']['title'], '-') . '-' . time();;
             }
         }
         $slide->save();
@@ -119,6 +121,7 @@ class TypeTreatmentsController extends Controller
             if ($data[$key . '_']['title'] && $data[$key . '_']['body']) {
                 $slide->translateOrNew($key)->title = $data[$key . '_']['title'];
                 $slide->translateOrNew($key)->body = $data[$key . '_']['body'];
+                $slide->translateOrNew($key)->slug =  Str::slug($data[$key . '_']['title'], '-') . '-' . time();;
             }
         }
         $slide->save();

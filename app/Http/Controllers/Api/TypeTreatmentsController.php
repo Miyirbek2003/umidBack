@@ -32,4 +32,28 @@ class TypeTreatmentsController extends Controller
             ]);
         }
     }
+    public function show($slug)
+    {
+        try {
+            $news = TypeTreatments::whereTranslation('slug', $slug)->first();
+            if ($news != null) {
+                return response()->json([
+                    "status" => true,
+                    "item" => $news
+                ]);
+            } else {
+                return response()->json([
+                    "status" => false,
+                    "message" => "Not found",
+                    "item" => []
+                ]);
+            }
+        } catch (\Throwable $th) {
+            return response()->json([
+                "status" => false,
+                "message" => "Error",
+                "errors" => $th->getMessage()
+            ]);
+        }
+    }
 }
