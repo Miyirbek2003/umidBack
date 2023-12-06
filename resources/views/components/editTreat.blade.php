@@ -4,7 +4,7 @@
 @section('content')
     <h4 class="py-3 m-0"><span class="text-muted fw-light">Лечений /</span> Изменить категорию
     </h4>
-    <h6 class="text-muted">Слайдер</h6>
+    <h6 class="text-muted">Лечений</h6>
 
     <div class="row">
 

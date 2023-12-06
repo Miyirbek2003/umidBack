@@ -54,7 +54,7 @@
             </a>
         </div>
         <div class="col-lg-3 col-sm-6 col-12">
-            <a href="{{ route('treatments.index') }}">
+            <a href="{{ route('typetreatments.index') }}">
                 <div class="card bg-info">
                     <div class="card-header align-items-start pb-3">
                         <div>

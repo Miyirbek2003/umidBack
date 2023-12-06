@@ -2,7 +2,7 @@
 
 
 @section('content')
-    <h4 class="py-3  m-0"><span class="text-muted fw-light">Лечений /</span> Добавить Тип
+    <h4 class="py-3  m-0"><span class="text-muted fw-light">Лечений /</span>  Тип лечений
     </h4>
     <div class="card">
 

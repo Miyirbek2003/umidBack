@@ -10,8 +10,8 @@
 @endpush
 
 @section('content')
-    <h4 class="py-3 m-0"><span class="text-muted fw-light">Слайдеры /</span> Добавить слайдер</h4>
-    <h6 class="text-muted">Слайдер</h6>
+    <h4 class="py-3 m-0"><span class="text-muted fw-light">Лечений /</span> Добавить тип лечений</h4>
+    <h6 class="text-muted">Лечений</h6>
     <div class="row">
         <div class="col-xl-12">
             <div class="card mb-4">
