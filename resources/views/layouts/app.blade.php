@@ -786,8 +786,7 @@
 
                 <!-- ! Hide app brand if navbar-full -->
                 <div class="app-brand demo">
-                    <a href="https://demos.themeselection.com/materio-bootstrap-html-laravel-admin-template-free/demo"
-                        class="app-brand-link">
+                    <a href="/" class="app-brand-link">
                         <span class="app-brand-logo demo me-1">
                             <span style="color:#9055FD;">
                                 <svg width="30" height="20" viewBox="0 0 250 196" fill="none"
