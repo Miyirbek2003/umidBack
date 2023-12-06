@@ -17,7 +17,7 @@ class OrderController extends Controller
     {
         $slides = Order::all();
         $treatment = Treatments::all();
-        return view('components.order.order', [
+        return view('components.Order.order', [
             'slides' => $slides,
             'treatment' => $treatment,
         ]);
@@ -27,7 +27,7 @@ class OrderController extends Controller
     {
         $slides = Order::all();
         $treatment = Treatments::all();
-        return view('components.order.zeroorder', [
+        return view('components.Order.zeroorder', [
             'slides' => $slides,
             'treatment' => $treatment,
         ]);
