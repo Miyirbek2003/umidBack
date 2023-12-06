@@ -42,8 +42,8 @@ class TreatmentsController extends Controller
     {
 
         $data = $request->validate([
-            'ru.[title]' => 'required',
-            'uz.[title]' => 'required',
+            'ru_.*' => 'required',
+            'uz_.*' => 'required',
             'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
 
         ]);
@@ -104,7 +104,11 @@ class TreatmentsController extends Controller
     public function update(Request $request, Treatments $treatment)
     {
 
-        $data = $request->all();
+        $data = $request->validate([
+            'ru_.*' => 'required',
+            'uz_.*' => 'required',
+            'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
+        ]);
 
         $languages = config('translatable.languages');
 

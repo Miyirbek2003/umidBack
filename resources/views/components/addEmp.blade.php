@@ -37,7 +37,7 @@
                                         <div class="form-floating form-floating-outline mb-4">
                                             <input type="text" class="form-control" name={{ 'uz.[name]' }}
                                                 id="basic-default-fullname" placeholder="Ism familiya">
-                                            @error('uz.[name]')
+                                            @error('uz_.name')
                                                 <p class="help-block text-danger">{{ $message }}</p>
                                             @enderror
                                             <label for="basic-default-fullname">Ism familiya</label>
@@ -45,7 +45,7 @@
                                         <div class="form-floating form-floating-outline mb-4">
                                             <input type="text" class="form-control" name={{ 'uz.[job]' }}
                                                 id="basic-default-fullname" placeholder="Yo'nalishi">
-                                            @error('ru.[job]')
+                                            @error('uz_.job')
                                                 <p class="help-block text-danger">{{ $message }}</p>
                                             @enderror
                                             <label for="basic-default-fullname">Yo'nalishi</label>
@@ -59,7 +59,7 @@
                                         <div class="form-floating form-floating-outline mb-4">
                                             <input type="text" class="form-control" name={{ 'ru.[name]' }}
                                                 id="basic-default-fullname" placeholder="Фамилия имя">
-                                            @error('ru.[name]')
+                                            @error('ru_.name')
                                                 <p class="help-block text-danger">{{ $message }}</p>
                                             @enderror
                                             <label for="basic-default-fullname">Фамилия имя</label>
@@ -67,7 +67,7 @@
                                         <div class="form-floating form-floating-outline mb-4">
                                             <input type="text" class="form-control" name={{ 'ru.[job]' }}
                                                 id="basic-default-fullname" placeholder="Направление">
-                                            @error('ru.[job]')
+                                            @error('ru_.job')
                                                 <p class="help-block text-danger">{{ $message }}</p>
                                             @enderror
                                             <label for="basic-default-fullname">Направление</label>

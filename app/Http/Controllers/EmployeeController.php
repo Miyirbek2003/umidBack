@@ -44,10 +44,9 @@ class EmployeeController extends Controller
     {
 
         $data = $request->validate([
-            'ru.[name]' => 'required',
-            'uz.[name]' => 'required',
-            'ru.[job]' => 'required',
-            'uz.[job]' => 'required',
+            'ru_.*' => 'required',
+            'uz_.*' => 'required',
+            'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
         ]);
 
         $languages = config('translatable.languages');
@@ -113,10 +112,8 @@ class EmployeeController extends Controller
         $file->move(public_path('images'), $name);
         $input['image'] = "$name";
         $data = $request->validate([
-            'ru.[name]' => 'required',
-            'uz.[name]' => 'required',
-            'ru.[job]' => 'required',
-            'uz.[job]' => 'required',
+            'ru_.*' => 'required',
+            'uz_.*' => 'required',
             'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
         ]);
 

@@ -43,9 +43,9 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <div class="form-floating form-floating-outline mb-4">
-                                            <textarea class="form-control h-px-75" id="basic-default-bio" name={{ 'uz.[title]' }} placeholder="Mavzuni kiriting"
+                                            <textarea class="form-control h-px-75" id="basic-default-bio" name='uz.[title]' placeholder="Mavzuni kiriting"
                                                 rows="3"></textarea>
-                                            @error('uz.[title]')
+                                            @error('uz_.title')
                                                 <p class="help-block text-danger">{{ $message }}</p>
                                             @enderror
                                             <label for="basic-default-bio">Mavzu</label>
@@ -54,9 +54,9 @@
                                             </div>
                                         </div>
                                         <div class="form-floating form-floating-outline mb-4">
-                                            <textarea class="form-control h-px-75" id="basic-default-bio" name={{ 'uz.[description]' }}
-                                                placeholder="Tavsifini kiriting" rows="3"></textarea>
-                                            @error('uz.[description]')
+                                            <textarea class="form-control h-px-75" id="basic-default-bio" name='uz.[description]' placeholder="Tavsifini kiriting"
+                                                rows="3"></textarea>
+                                            @error('uz_.description')
                                                 <p class="help-block text-danger">{{ $message }}</p>
                                             @enderror
                                             <label for="basic-default-bio">Tavsifi</label>
@@ -68,17 +68,16 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <div class="form-floating form-floating-outline mb-4">
-                                            <textarea class="form-control h-px-75" id="basic-default-bio" name={{ 'ru.[title]' }} placeholder="Тема"
-                                                rows="3"></textarea>
-                                            @error('ru.[title]')
+                                            <textarea class="form-control h-px-75" id="basic-default-bio" name='ru.[title]' placeholder="Тема" rows="3"></textarea>
+                                            @error('ru_.title')
                                                 <p class="help-block text-danger">{{ $message }}</p>
                                             @enderror
                                             <label for="basic-default-bio">Тема</label>
                                         </div>
                                         <div class="form-floating form-floating-outline mb-4">
-                                            <textarea class="form-control h-px-75" id="basic-default-bio" name={{ 'ru.[description]' }} placeholder="Описание"
+                                            <textarea class="form-control h-px-75" id="basic-default-bio" name='ru.[description]' placeholder="Описание"
                                                 rows="3"></textarea>
-                                            @error('ru.[description]')
+                                            @error('ru_.description')
                                                 <p class="help-block text-danger">{{ $message }}</p>
                                             @enderror
                                             <label for="basic-default-bio">Описание</label>

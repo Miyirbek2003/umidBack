@@ -43,13 +43,14 @@ class SlideController extends Controller
      */
     public function store(Request $request)
     {
+
         $data = $request->validate([
-            'ru.title' => 'required',
-            'uz.title' => 'required',
-            'ru.description' => 'required',
-            'uz.description' => 'required',
+            'ru_.*' => 'required',
+            'uz_.*' => 'required',
             'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
         ]);
+
+
 
         $languages = config('translatable.languages');
 
@@ -114,7 +115,11 @@ class SlideController extends Controller
         $name = time() . rand(1, 50) . '.' . $file->extension();
         $file->move(public_path('images'), $name);
         $input['image'] = "$name";
-        $data = $request->all();
+        $data = $request->validate([
+            'ru_.*' => 'required',
+            'uz_.*' => 'required',
+            'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
+        ]);
 
         $slide = Slide::findOrFail($slide->id);
         $slide->image = $name;

@@ -43,10 +43,9 @@ class FeedbackController extends Controller
     public function store(Request $request)
     {
         $data = $request->validate([
-            'ru.[title]' => 'required',
-            'uz.[title]' => 'required',
-            'ru.[description]' => 'required',
-            'uz.[description]' => 'required',
+            'ru_.*' => 'required',
+            'uz_.*' => 'required',
+
         ]);
 
         $languages = config('translatable.languages');
@@ -104,7 +103,11 @@ class FeedbackController extends Controller
      */
     public function update(Request $request, Feedback $feedback)
     {
-        $data = $request->all();
+        $data = $request->validate([
+            'ru_.*' => 'required',
+            'uz_.*' => 'required',
+            'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
+        ]);
 
         $languages = config('translatable.languages');
 

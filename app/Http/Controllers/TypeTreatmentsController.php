@@ -50,11 +50,11 @@ class TypeTreatmentsController extends Controller
     {
 
         $data = $request->validate([
-            'ru.[title]' => 'required',
-            'uz.[title]' => 'required',
+            'ru_.*' => 'required',
+            'uz_.*' => 'required',
+
             'treatment_id' => 'required',
-            'ru.[body]' => 'required',
-            'uz.[body]' => 'required',
+
         ]);
 
         $languages = config('translatable.languages');
@@ -114,11 +114,10 @@ class TypeTreatmentsController extends Controller
     public function update(Request $request, TypeTreatments $typeTreatment, $id)
     {
         $data = $request->validate([
-            'ru.[title]' => 'required',
-            'uz.[title]' => 'required',
+            'ru_.*' => 'required',
+            'uz_.*' => 'required',
+
             'treatment_id' => 'required',
-            'ru.[body]' => 'required',
-            'uz.[body]' => 'required',
         ]);
 
 

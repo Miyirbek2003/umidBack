@@ -37,7 +37,7 @@
                                         <div class="form-floating form-floating-outline mb-4">
                                             <input type="text" class="form-control" name={{ 'uz.[title]' }}
                                                 id="basic-default-fullname" placeholder="Ism familiya">
-                                            @error('uz.[title]')
+                                            @error('uz_.title')
                                                 <p class="help-block text-danger">{{ $message }}</p>
                                             @enderror
                                             <label for="basic-default-fullname">Ism familiya</label>
@@ -46,7 +46,7 @@
                                             <textarea type="text" class="form-control h-px-75" name={{ 'uz.[description]' }} id="basic-default-fullname"
                                                 placeholder="Sharh">
                                             </textarea>
-                                            @error('uz.[description]')
+                                            @error('uz_.description')
                                                 <p class="help-block text-danger">{{ $message }}</p>
                                             @enderror
                                             <label for="basic-default-fullname">Sharh</label>
@@ -60,7 +60,7 @@
                                         <div class="form-floating form-floating-outline mb-4">
                                             <input type="text" class="form-control" name={{ 'ru.[title]' }}
                                                 id="basic-default-fullname" placeholder="Фамилия имя">
-                                            @error('ru.[title]')
+                                            @error('ru_.title')
                                                 <p class="help-block text-danger">{{ $message }}</p>
                                             @enderror
                                             <label for="basic-default-fullname">Фамилия имя</label>
@@ -69,7 +69,7 @@
                                             <textarea type="text" class="form-control h-px-75" name={{ 'ru.[description]' }} id="basic-default-fullname"
                                                 placeholder="Отзыв">
                                         </textarea>
-                                            @error('ru.[description]')
+                                            @error('ru_.description')
                                                 <p class="help-block text-danger">{{ $message }}</p>
                                             @enderror
                                             <label for="basic-default-fullname">Отзыв</label>

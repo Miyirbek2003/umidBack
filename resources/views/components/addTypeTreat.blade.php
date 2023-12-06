@@ -46,7 +46,7 @@
                                             <div class="form-floating col-xl-6 form-floating-outline mb-4">
                                                 <input type="text" class="form-control" name={{ 'uz.[title]' }}
                                                     id="basic-default-fullname" placeholder="Mavzu">
-                                                @error('uz.[title]')
+                                                @error('uz_.title')
                                                     <p class="help-block text-danger">{{ $message }}</p>
                                                 @enderror
                                                 <label for="basic-default-fullname">Mavzu</label>
@@ -68,7 +68,7 @@
                                         <div>
                                             <textarea class="form-control tiny-editor" id="editor12" cols='30' name={{ 'uz.[body]' }} placeholder="Kontent"
                                                 rows="10"></textarea>
-                                            @error('uz.[body]')
+                                            @error('uz_.body')
                                                 <p class="help-block text-danger">{{ $message }}</p>
                                             @enderror
                                             <label for="basic-default-bio">Kontent</label>
@@ -83,7 +83,7 @@
                                             <div class="form-floating col-xl-6 form-floating-outline mb-4">
                                                 <input type="text" class="form-control" name={{ 'ru.[title]' }}
                                                     id="basic-default-fullname" placeholder="Тема">
-                                                @error('ru.[title]')
+                                                @error('ru_.title')
                                                     <p class="help-block text-danger">{{ $message }}</p>
                                                 @enderror
                                                 <label for="basic-default-fullname">Тема</label>
@@ -103,7 +103,7 @@
                                         <div>
                                             <textarea class="form-control tiny-editor" id="editor21" cols='30' name={{ 'ru.[body]' }} placeholder="Контент"
                                                 rows="10"></textarea>
-                                            @error('ru.[body]')
+                                            @error('ru_.body')
                                                 <p class="help-block text-danger">{{ $message }}</p>
                                             @enderror
                                             <label for="basic-default-bio">Контент</label>

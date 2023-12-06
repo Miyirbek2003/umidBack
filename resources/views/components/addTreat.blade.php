@@ -45,7 +45,7 @@
                                                     <input type="text" class="form-control h-px-25"
                                                         id="basic-default-bio" name={{ 'uz.[title]' }}
                                                         placeholder="Mavzuni kiriting" rows="3">
-                                                    @error('uz.[title]')
+                                                    @error('uz_.title')
                                                         <p class="help-block text-danger">{{ $message }}</p>
                                                     @enderror
                                                     <label for="basic-default-bio">Mavzu</label>
@@ -64,7 +64,7 @@
                                                     <input type="text" class="form-control h-px-25"
                                                         id="basic-default-bio" name={{ 'ru.[title]' }}
                                                         placeholder="Mavzuni kiriting" rows="3">
-                                                    @error('ru.[title]')
+                                                    @error('ru_.title')
                                                         <p class="help-block text-danger">{{ $message }}</p>
                                                     @enderror
                                                     <label for="basic-default-bio">Тема</label>
