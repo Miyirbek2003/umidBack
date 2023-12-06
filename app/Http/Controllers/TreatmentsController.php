@@ -40,12 +40,11 @@ class TreatmentsController extends Controller
      */
     public function store(Request $request)
     {
-
+        
         $data = $request->validate([
             'ru_.*' => 'required',
             'uz_.*' => 'required',
             'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
-
         ]);
 
         $languages = config('translatable.languages');
