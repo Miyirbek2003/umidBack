@@ -1274,6 +1274,17 @@
             $('.order_main').addClass('open')
         };
 
+
+        if (window.location.pathname == '/imageslide') {
+            $('.work1').addClass('active')
+            $('.work_main').addClass('open')
+        };
+
+        if (window.location.pathname == '/imageslide/create') {
+            $('.work2').addClass('active')
+            $('.work_main').addClass('open')
+        };
+
         function previewFile() {
             var preview = document.querySelector('#imageShow');
             var file = document.querySelector('input[type=file]').files[0];

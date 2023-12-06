@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Employee;
+use App\Models\Feedback;
+use App\Models\ImageSlide;
+use App\Models\Order;
 use App\Models\Slide;
 use App\Models\Treatments;
 use App\Models\TypeTreatments;
@@ -32,6 +35,9 @@ class HomeController extends Controller
         $workers = Employee::count();
         $treatment = Treatments::count();
         $typeTreat = TypeTreatments::count();
+        $feed = Feedback::count();
+        $imageSlide = ImageSlide::count();
+        $order = Order::where('status', '1')->count();
 
         return view('components.home', [
             'user' => Auth::user(),
@@ -39,6 +45,9 @@ class HomeController extends Controller
             'workers' => $workers,
             'treatment' => $treatment,
             'typeTreat' => $typeTreat,
+            'feed' => $feed,
+            'imageSlide' => $imageSlide,
+            'order' => $order,
         ]);
     }
 }

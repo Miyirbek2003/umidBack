@@ -2,7 +2,7 @@
 
 
 @section('content')
-    <h4 class="py-3  m-0"><span class="text-muted fw-light">Лечений /</span> Категории
+    <h4 class="py-3  m-0"><span class="text-muted fw-light">Отзывы /</span> Все отзывы
     </h4>
     <div class="card">
 

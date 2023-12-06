@@ -36,8 +36,7 @@
                                     <div class="card-body">
                                         <div class="form-floating form-floating-outline mb-4">
                                             <input type="text" class="form-control" name='uz.[name]'
-                                                id="basic-default-fullname" placeholder="Ism familiya"
-                                                value="{{ old('uz' . '.name') ? old('uz' . '.name') : ($slide->translate('uz') != null ? $slide->translate('uz')->name : '') }}">
+                                                id="basic-default-fullname" placeholder="Ism familiya">
                                             @error('uz_.name')
                                                 <p class="help-block text-danger">{{ $message }}</p>
                                             @enderror
@@ -45,8 +44,7 @@
                                         </div>
                                         <div class="form-floating form-floating-outline mb-4">
                                             <input type="text" class="form-control" name='uz.[job]'
-                                                id="basic-default-fullname" placeholder="Yo'nalishi"
-                                                value="{{ old('uz' . '.job') ? old('uz' . '.job') : ($slide->translate('uz') != null ? $slide->translate('uz')->job : '') }}">
+                                                id="basic-default-fullname" placeholder="Yo'nalishi">
                                             @error('uz_.job')
                                                 <p class="help-block text-danger">{{ $message }}</p>
                                             @enderror
@@ -60,8 +58,7 @@
                                     <div class="card-body">
                                         <div class="form-floating form-floating-outline mb-4">
                                             <input type="text" class="form-control" name='ru.[name]'
-                                                id="basic-default-fullname" placeholder="Фамилия имя"
-                                                value="{{ old('ru' . '.name') ? old('ru' . '.name') : ($slide->translate('ru') != null ? $slide->translate('ru')->name : '') }}">
+                                                id="basic-default-fullname" placeholder="Фамилия имя">
                                             @error('ru_.name')
                                                 <p class="help-block text-danger">{{ $message }}</p>
                                             @enderror
@@ -69,8 +66,7 @@
                                         </div>
                                         <div class="form-floating form-floating-outline mb-4">
                                             <input type="text" class="form-control" name='ru.[job]'
-                                                id="basic-default-fullname" placeholder="Направление"
-                                                value="{{ old('ru' . '.job') ? old('ru' . '.job') : ($slide->translate('ru') != null ? $slide->translate('ru')->job : '') }}">
+                                                id="basic-default-fullname" placeholder="Направление">
                                             @error('ru_.job')
                                                 <p class="help-block text-danger">{{ $message }}</p>
                                             @enderror

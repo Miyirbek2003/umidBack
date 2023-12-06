@@ -2,7 +2,7 @@
 
 
 @section('content')
-    <h4 class="py-3  m-0"><span class="text-muted fw-light">Заявки /</span> Все заявки
+    <h4 class="py-3  m-0"><span class="text-muted fw-light">Заявки /</span> Ожидающие заявки
     </h4>
     <div class="card">
         <div class="table-responsive">
