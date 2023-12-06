@@ -9,7 +9,7 @@ class TypeTreatmentsTranslation extends Model
 {
     use HasFactory;
     public $timestamps = false;
-    protected $fillable = ['title', 'body'];
+    protected $fillable = ['title', 'body','slug'];
     public function translated()
     {
         return $this->belongsTo(TypeTreatments::class);

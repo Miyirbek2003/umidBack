@@ -10,7 +10,7 @@ class TypeTreatments extends Model
 {
     use HasFactory;
     use Translatable;
-    public $translatedAttributes = ['title', 'body'];
+    public $translatedAttributes = ['title', 'body', 'slug'];
 
     public function typeTreat()
     {
