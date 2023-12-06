@@ -950,7 +950,7 @@
 
                     <li class="menu-item feed_main">
                         <a href="javascript:void(0);" class="menu-link menu-toggle waves-effect">
-                            <i class="menu-icon tf-icons mdi mdi-account-outline"></i>
+                            <i class="menu-icon tf-icons mdi mdi-comment-quote"></i>
                             <div>Отзывы</div>
                         </a>
 
@@ -985,7 +985,7 @@
 
                     <li class="menu-item work_main">
                         <a href="javascript:void(0);" class="menu-link menu-toggle waves-effect">
-                            <i class="menu-icon tf-icons mdi mdi-account-outline"></i>
+                            <i class="menu-icon tf-icons mdi mdi-briefcase-outline"></i>
                             <div>Работы</div>
                         </a>
 
@@ -1022,7 +1022,7 @@
 
                     <li class="menu-item order_main">
                         <a href="javascript:void(0);" class="menu-link menu-toggle waves-effect">
-                            <i class="menu-icon tf-icons mdi mdi-account-outline"></i>
+                            <i class="menu-icon tf-icons mdi mdi-format-align-bottom"></i>
                             <div>Заявки</div>
                         </a>
 
@@ -1273,6 +1273,7 @@
             $('.order2').addClass('active')
             $('.order_main').addClass('open')
         };
+
         function previewFile() {
             var preview = document.querySelector('#imageShow');
             var file = document.querySelector('input[type=file]').files[0];
