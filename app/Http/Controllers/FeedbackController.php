@@ -16,7 +16,7 @@ class FeedbackController extends Controller
     public function index()
     {
         $feedback = Feedback::all();
-        return view('components.feedback.Feedback', [
+        return view('components.Feedback.Feedback', [
             'slides' => $feedback
         ]);
     }
@@ -89,7 +89,7 @@ class FeedbackController extends Controller
      */
     public function edit(Feedback $feedback)
     {
-        return view('components.feedback.editfeedback', [
+        return view('components.Feedback.editfeedback', [
             'slide' => $feedback
         ]);
     }
