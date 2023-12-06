@@ -16,7 +16,7 @@ class ImageSlideController extends Controller
     public function index()
     {
         $slides = ImageSlide::all();
-        return view('components.imageslide.imageslide', [
+        return view('components.ImageSlide.imageslide', [
             'slides' => $slides
         ]);
     }
@@ -29,7 +29,7 @@ class ImageSlideController extends Controller
     public function create()
     {
         $language = config('translatable.languages');
-        return view('components.imageslide.addimageslide', [
+        return view('components.ImageSlide.addimageslide', [
             'languages' => $language
         ]);
     }
@@ -94,7 +94,7 @@ class ImageSlideController extends Controller
     {
 
         $imageSlide  = ImageSlide::findOrFail($id);
-        return view('components.imageslide.editimageslide', [
+        return view('components.ImageSlide.editimageslide', [
             'slide' => $imageSlide
         ]);
     }
