@@ -89,7 +89,7 @@ class FeedbackController extends Controller
      */
     public function edit(Feedback $feedback)
     {
-        return view('components.Feedback.editfeedback', [
+        return view('components.Feedback.editFeedback', [
             'slide' => $feedback
         ]);
     }
