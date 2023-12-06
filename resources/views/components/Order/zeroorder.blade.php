@@ -22,7 +22,7 @@
                         @if ($slide->status == '0')
                             <tr class="text-center">
                                 <td>{{ $slide->id }}</td>
-                                <td>{{ $treatment->find($slide->treatment_id)->title }}</td>
+                                <td>{{ $treatment?->find($slide->treatment_id)?->title }}</td>
                                 <td>
                                     {{ $slide->name }}
                                 </td>
