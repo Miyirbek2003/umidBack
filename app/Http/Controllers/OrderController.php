@@ -50,6 +50,7 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
+
         $data = $request->validate([
             'name' => 'required',
             'phone' => 'required',
@@ -58,13 +59,16 @@ class OrderController extends Controller
 
         $order = new Order;
 
+        if (empty($data)) {
+            return response()->json(['message' => 'Error']);
+        } else {
+            $order->name = $data['name'];
+            $order->treatment_id = $data['treatment_id'];
+            $order->phone = $data['phone'];
+            $order->save();
+        }
 
-        $order->name = $data[0]->name;
-        $order->treatment_id = $data[0]->treatment_id;
-        $order->phone = $data[0]->phone;
-
-        $order->save();
-        return $request->all();
+        return response()->json(['message' => 'Succes']);
     }
 
     /**

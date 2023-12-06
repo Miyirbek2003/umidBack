@@ -14,6 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::post('/order', [App\Http\Controllers\OrderController::class, 'store']);
+
+
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
@@ -24,4 +27,3 @@ Route::get('/typetreatments', [App\Http\Controllers\Api\TypeTreatmentsController
 Route::get('/typetreatments/{slug}', [App\Http\Controllers\Api\TypeTreatmentsController::class, 'show']);
 Route::get('/imageslide', [App\Http\Controllers\Api\ImageSlideController::class, 'index']);
 Route::get('/feedback', [App\Http\Controllers\Api\FeedbackController::class, 'index']);
-Route::post('/order', [App\Http\Controllers\OrderController::class, 'store']);
