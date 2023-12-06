@@ -16,7 +16,7 @@ class CreateTypeTreatmentsTable extends Migration
         Schema::create('type_treatments', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('treatment_id')->nullable();
-            $table->foreign('treatment_id')->references('id')->on('treatments');
+            $table->foreign('treatment_id')->references('id')->on('treatments')->onDelete('cascade');
             $table->timestamps();
         });
     }
