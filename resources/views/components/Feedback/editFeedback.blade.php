@@ -36,14 +36,14 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <div class="form-floating form-floating-outline mb-4">
-                                            <input type="text" class="form-control" name={{ 'uz.[title]' }}
+                                            <input type="text" class="form-control" name='uz.[title]'
                                                 id="basic-default-fullname"
                                                 value="{{ old('uz' . '.title') ? old('uz' . '.title') : ($slide->translate('uz') != null ? $slide->translate('uz')->title : '') }}"
                                                 placeholder="Ism familiya">
                                             <label for="basic-default-fullname">Ism familiya</label>
                                         </div>
                                         <div class="form-floating form-floating-outline mb-4">
-                                            <textarea type="text" class="form-control h-px-75" name={{ 'uz.[description]' }} id="basic-default-fullname"
+                                            <textarea type="text" class="form-control h-px-75" name='uz.[description]' id="basic-default-fullname"
                                                 placeholder="Sharh">
                                                 {{ old('uz' . '.description') ? old('uz' . '.description') : ($slide->translate('uz') != null ? $slide->translate('uz')->description : '') }}
                                             </textarea>
@@ -56,14 +56,14 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <div class="form-floating form-floating-outline mb-4">
-                                            <input type="text" class="form-control" name={{ 'ru.[title]' }}
+                                            <input type="text" class="form-control" name='ru.[title]'
                                                 id="basic-default-fullname"
                                                 value="{{ old('ru' . '.title') ? old('ru' . '.title') : ($slide->translate('ru') != null ? $slide->translate('ru')->title : '') }}"
                                                 placeholder="Фамилия имя">
                                             <label for="basic-default-fullname">Фамилия имя</label>
                                         </div>
                                         <div class="form-floating form-floating-outline mb-4">
-                                            <textarea type="text" class="form-control h-px-75" name={{ 'ru.[description]' }} id="basic-default-fullname"
+                                            <textarea type="text" class="form-control h-px-75" name='ru.[description]' id="basic-default-fullname"
                                                 placeholder="Отзыв">
                                                 {{ old('ru' . '.description') ? old('ru' . '.description') : ($slide->translate('ru') != null ? $slide->translate('ru')->description : '') }}
                                         </textarea>

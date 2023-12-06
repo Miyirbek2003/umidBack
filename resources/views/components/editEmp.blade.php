@@ -37,15 +37,19 @@
                                         <div class="form-floating form-floating-outline mb-4">
                                             <input type="text" class="form-control"
                                                 value="{{ old('uz' . '.name') ? old('uz' . '.name') : ($slide->translate('uz') != null ? $slide->translate('uz')->name : '') }}"
-                                                name={{ 'uz.[name]' }} id="basic-default-fullname"
-                                                placeholder="Ism familiya">
+                                                name='uz.[name]' id="basic-default-fullname" placeholder="Ism familiya">
+                                            @error('uz_.name')
+                                                <p class="help-block text-danger">{{ $message }}</p>
+                                            @enderror
                                             <label for="basic-default-fullname">Ism familiya</label>
                                         </div>
                                         <div class="form-floating form-floating-outline mb-4">
                                             <input type="text" class="form-control"
                                                 value="{{ old('uz' . '.job') ? old('uz' . '.job') : ($slide->translate('uz') != null ? $slide->translate('uz')->job : '') }}"
-                                                name={{ 'uz.[job]' }} id="basic-default-fullname"
-                                                placeholder="Yo'nalishi">
+                                                name='uz.[job]' id="basic-default-fullname" placeholder="Yo'nalishi">
+                                            @error('uz_.job')
+                                                <p class="help-block text-danger">{{ $message }}</p>
+                                            @enderror
                                             <label for="basic-default-fullname">Yo'nalishi</label>
                                         </div>
                                     </div>
@@ -55,15 +59,21 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <div class="form-floating form-floating-outline mb-4">
-                                            <input type="text" class="form-control" name={{ 'ru.[name]' }}
+                                            <input type="text" class="form-control" name='ru.[name]'
                                                 value="{{ old('ru' . '.name') ? old('ru' . '.name') : ($slide->translate('ru') != null ? $slide->translate('ru')->name : '') }}"
                                                 id="basic-default-fullname" placeholder="Фамилия имя">
+                                            @error('ru_.name')
+                                                <p class="help-block text-danger">{{ $message }}</p>
+                                            @enderror
                                             <label for="basic-default-fullname">Фамилия имя</label>
                                         </div>
                                         <div class="form-floating form-floating-outline mb-4">
-                                            <input type="text" class="form-control" name={{ 'ru.[job]' }}
+                                            <input type="text" class="form-control" name='ru.[job]'
                                                 value="{{ old('ru' . '.job') ? old('ru' . '.job') : ($slide->translate('ru') != null ? $slide->translate('ru')->job : '') }}"
                                                 id="basic-default-fullname" placeholder="Направление">
+                                            @error('ru_.job')
+                                                <p class="help-block text-danger">{{ $message }}</p>
+                                            @enderror
                                             <label for="basic-default-fullname">Направление</label>
                                         </div>
 
@@ -86,10 +96,11 @@
                                 <div class="mb-3">
                                     <label for="formFile" class="form-label">Формат (.jpg, .jpeg, .png)</label>
                                     <input class="form-control" type="file" name="image" required
-                                        value="{{ asset(old('images')) }}" id="image" onchange="previewFile()">
+                                        value="{{ asset(    old('image') ? old('image') : 'images/' . $slide->image) }}"
+                                        id="image" onchange="previewFile()">
                                 </div>
                             </div>
-                            <img src="{{ asset(old('images') ? old('images') : 'images/' . $slide->image) }}"
+                            <img src="{{ asset(old('image') ? old('image') : 'images/' . $slide->image) }}"
                                 class="form-control readonly" id="imageShow" class="img-uploaded mb-1" width="100%"
                                 height="200px" style="object-fit: contain" alt="Suwret korinisi"
                                 accept="image/png, image/gif, image/jpeg">

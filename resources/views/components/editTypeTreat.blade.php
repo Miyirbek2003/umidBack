@@ -47,19 +47,19 @@
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="form-floating col-xl-6 form-floating-outline mb-4">
-                                                <input type="text" class="form-control" name={{ 'uz.[title]' }}
-                                                    id="basic-default-fullname" placeholder="Mavzu" required
+                                                <input type="text" class="form-control" name='uz.[title]'
+                                                    id="basic-default-fullname" placeholder="Mavzu"
                                                     value="{{ old('uz' . '.title') ? old('uz' . '.title') : ($slide->translate('uz') != null ? $slide->translate('uz')->title : '') }}">
                                                 <label for="basic-default-fullname">Mavzu</label>
                                             </div>
                                             <select class="form-select form-floating mb-4 col-xl-6" style="width: auto"
                                                 name="treatment_id" id="exampleFormControlSelect1"
-                                                aria-label="Default select example" required>
+                                                aria-label="Default select example">
 
                                                 <option disabled selected>Kategoriya tanlang</option>
                                                 @foreach ($treatment as $treat)
                                                     <option @if ($treat->id == $slide->typeTreat->id) selected="selected" @endif
-                                                        class="dropdown-item" value="{{ $treat->id }}">
+                                                        class="dropdown-item" value={{ $treat->id }}>
                                                         {{ $treat->title }}</option>
                                                 @endforeach
                                             </select>
@@ -80,7 +80,7 @@
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="form-floating col-xl-6 form-floating-outline mb-4">
-                                                <input type="text" class="form-control" name={{ 'ru.[title]' }}
+                                                <input type="text" class="form-control" name='ru.[title]'
                                                     id="basic-default-fullname" placeholder="Тема"
                                                     value="{{ old('ru' . '.title') ? old('ru' . '.title') : ($slide->translate('ru') != null ? $slide->translate('ru')->title : '') }}">
 
@@ -97,7 +97,7 @@
                                             </select>
                                         </div>
                                         <div>
-                                            <textarea class="form-control tiny-editor" id="editor21" cols='30' name={{ 'ru.[body]' }} placeholder="Контент"
+                                            <textarea class="form-control tiny-editor" id="editor21" cols='30' name='ru.[body]' placeholder="Контент"
                                                 rows="10">
                                                 {{ old('ru' . '.body') ? old('ru' . '.body') : ($slide->translate('ru') != null ? $slide->translate('ru')->body : '') }}
                                             </textarea>

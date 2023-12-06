@@ -45,7 +45,7 @@
                                             <div class="card-body">
                                                 <div class="form-floating form-floating-outline mb-4">
                                                     <input type="text" class="form-control h-px-25"
-                                                        id="basic-default-bio" name={{ 'uz.[title]' }}
+                                                        id="basic-default-bio" name='uz.[title]'
                                                         value="{{ old('uz' . '.title') ? old('uz' . '.title') : ($slide->translate('uz') != null ? $slide->translate('uz')->title : '') }}"
                                                         placeholder="Mavzuni kiriting" required>
                                                     <label for="basic-default-bio">Mavzu</label>
@@ -62,7 +62,7 @@
                                             <div class="card-body">
                                                 <div class="form-floating form-floating-outline mb-4">
                                                     <input type="text" class="form-control h-px-25"
-                                                        id="basic-default-bio" name={{ 'ru.[title]' }}
+                                                        id="basic-default-bio" name='ru.[title]'
                                                         placeholder="Mavzuni kiriting" rows="3" required
                                                         value="{{ old('ru' . '.title') ? old('ru' . '.title') : ($slide->translate('ru') != null ? $slide->translate('ru')->title : '') }}">
                                                     <label for="basic-default-bio">Тема</label>

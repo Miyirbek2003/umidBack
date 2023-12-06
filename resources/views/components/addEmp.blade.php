@@ -35,16 +35,18 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <div class="form-floating form-floating-outline mb-4">
-                                            <input type="text" class="form-control" name={{ 'uz.[name]' }}
-                                                id="basic-default-fullname" placeholder="Ism familiya">
+                                            <input type="text" class="form-control" name='uz.[name]'
+                                                id="basic-default-fullname" placeholder="Ism familiya"
+                                                value="{{ old('uz' . '.name') ? old('uz' . '.name') : ($slide->translate('uz') != null ? $slide->translate('uz')->name : '') }}">
                                             @error('uz_.name')
                                                 <p class="help-block text-danger">{{ $message }}</p>
                                             @enderror
                                             <label for="basic-default-fullname">Ism familiya</label>
                                         </div>
                                         <div class="form-floating form-floating-outline mb-4">
-                                            <input type="text" class="form-control" name={{ 'uz.[job]' }}
-                                                id="basic-default-fullname" placeholder="Yo'nalishi">
+                                            <input type="text" class="form-control" name='uz.[job]'
+                                                id="basic-default-fullname" placeholder="Yo'nalishi"
+                                                value="{{ old('uz' . '.job') ? old('uz' . '.job') : ($slide->translate('uz') != null ? $slide->translate('uz')->job : '') }}">
                                             @error('uz_.job')
                                                 <p class="help-block text-danger">{{ $message }}</p>
                                             @enderror
@@ -57,16 +59,18 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <div class="form-floating form-floating-outline mb-4">
-                                            <input type="text" class="form-control" name={{ 'ru.[name]' }}
-                                                id="basic-default-fullname" placeholder="Фамилия имя">
+                                            <input type="text" class="form-control" name='ru.[name]'
+                                                id="basic-default-fullname" placeholder="Фамилия имя"
+                                                value="{{ old('ru' . '.name') ? old('ru' . '.name') : ($slide->translate('ru') != null ? $slide->translate('ru')->name : '') }}">
                                             @error('ru_.name')
                                                 <p class="help-block text-danger">{{ $message }}</p>
                                             @enderror
                                             <label for="basic-default-fullname">Фамилия имя</label>
                                         </div>
                                         <div class="form-floating form-floating-outline mb-4">
-                                            <input type="text" class="form-control" name={{ 'ru.[job]' }}
-                                                id="basic-default-fullname" placeholder="Направление">
+                                            <input type="text" class="form-control" name='ru.[job]'
+                                                id="basic-default-fullname" placeholder="Направление"
+                                                value="{{ old('ru' . '.job') ? old('ru' . '.job') : ($slide->translate('ru') != null ? $slide->translate('ru')->job : '') }}">
                                             @error('ru_.job')
                                                 <p class="help-block text-danger">{{ $message }}</p>
                                             @enderror

@@ -44,7 +44,7 @@
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="form-floating col-xl-6 form-floating-outline mb-4">
-                                                <input type="text" class="form-control" name={{ 'uz.[title]' }}
+                                                <input type="text" class="form-control" name='uz.[title]'
                                                     id="basic-default-fullname" placeholder="Mavzu">
                                                 @error('uz_.title')
                                                     <p class="help-block text-danger">{{ $message }}</p>
@@ -66,7 +66,7 @@
                                             @enderror
                                         </div>
                                         <div>
-                                            <textarea class="form-control tiny-editor" id="editor12" cols='30' name={{ 'uz.[body]' }} placeholder="Kontent"
+                                            <textarea class="form-control tiny-editor" id="editor12" cols='30' name='uz.[body]' placeholder="Kontent"
                                                 rows="10"></textarea>
                                             @error('uz_.body')
                                                 <p class="help-block text-danger">{{ $message }}</p>
@@ -81,7 +81,7 @@
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="form-floating col-xl-6 form-floating-outline mb-4">
-                                                <input type="text" class="form-control" name={{ 'ru.[title]' }}
+                                                <input type="text" class="form-control" name='ru.[title]'
                                                     id="basic-default-fullname" placeholder="Тема">
                                                 @error('ru_.title')
                                                     <p class="help-block text-danger">{{ $message }}</p>
@@ -101,7 +101,7 @@
                                             @enderror
                                         </div>
                                         <div>
-                                            <textarea class="form-control tiny-editor" id="editor21" cols='30' name={{ 'ru.[body]' }} placeholder="Контент"
+                                            <textarea class="form-control tiny-editor" id="editor21" cols='30' name='ru.[body]' placeholder="Контент"
                                                 rows="10"></textarea>
                                             @error('ru_.body')
                                                 <p class="help-block text-danger">{{ $message }}</p>

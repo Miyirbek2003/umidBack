@@ -44,7 +44,7 @@
                                     <div class="card-body">
                                         <div class="form-floating form-floating-outline mb-4">
                                             <textarea class="form-control h-px-75" id="basic-default-bio" name='uz.[title]' placeholder="Mavzuni kiriting"
-                                                rows="3"></textarea>
+                                                rows="3">{{ old('uz_.title') }}</textarea>
                                             @error('uz_.title')
                                                 <p class="help-block text-danger">{{ $message }}</p>
                                             @enderror
@@ -55,7 +55,7 @@
                                         </div>
                                         <div class="form-floating form-floating-outline mb-4">
                                             <textarea class="form-control h-px-75" id="basic-default-bio" name='uz.[description]' placeholder="Tavsifini kiriting"
-                                                rows="3"></textarea>
+                                                rows="3">{{ old('uz_.description') }}</textarea>
                                             @error('uz_.description')
                                                 <p class="help-block text-danger">{{ $message }}</p>
                                             @enderror
@@ -68,7 +68,7 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <div class="form-floating form-floating-outline mb-4">
-                                            <textarea class="form-control h-px-75" id="basic-default-bio" name='ru.[title]' placeholder="Тема" rows="3"></textarea>
+                                            <textarea class="form-control h-px-75" id="basic-default-bio" name='ru.[title]' placeholder="Тема" rows="3">{{ old('ru_.title') }}</textarea>
                                             @error('ru_.title')
                                                 <p class="help-block text-danger">{{ $message }}</p>
                                             @enderror
@@ -76,7 +76,7 @@
                                         </div>
                                         <div class="form-floating form-floating-outline mb-4">
                                             <textarea class="form-control h-px-75" id="basic-default-bio" name='ru.[description]' placeholder="Описание"
-                                                rows="3"></textarea>
+                                                rows="3">{{ old('ru_.description') }}</textarea>
                                             @error('ru_.description')
                                                 <p class="help-block text-danger">{{ $message }}</p>
                                             @enderror
@@ -102,7 +102,8 @@
                                 <div class="mb-3">
                                     <label for="formFile" class="form-label">Формат (.jpg, .jpeg, .png)</label>
                                     <input class="form-control" type="file" name="image" value="{{ old('image') }}"
-                                        id="image" onchange="previewFile()">
+                                        id="image" onchange="previewFile()" accept="image/png, image/gif, image/jpeg">
+
                                     @error('image')
                                         <p class="help-block text-danger">{{ $message }}</p>
                                     @enderror

@@ -35,16 +35,21 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <div class="form-floating form-floating-outline mb-4">
-                                            <textarea class="form-control h-px-75" id="basic-default-bio" name={{ 'uz.[title]' }} placeholder="Mavzuni kiriting"
+                                            <textarea class="form-control h-px-75" id="basic-default-bio" name='uz.[title]' placeholder="Mavzuni kiriting"
                                                 rows="3" required>{{ old('uz' . '.title') ? old('uz' . '.title') : ($slide->translate('uz') != null ? $slide->translate('uz')->title : '') }}</textarea>
+                                            @error('uz_.title')
+                                                <p class="help-block text-danger">{{ $message }}</p>
+                                            @enderror
                                             <label for="basic-default-bio">Mavzu</label>
-                                            <div class="valid-feedback">
-                                                Looks good!
-                                            </div>
+
                                         </div>
                                         <div class="form-floating form-floating-outline mb-4">
-                                            <textarea class="form-control h-px-75" id="basic-default-bio" name={{ 'uz.[description]' }}
-                                                placeholder="Tavsifini kiriting" rows="3" required="">{{ old('uz' . '.description') ? old('uz' . '.description') : ($slide->translate('uz') != null ? $slide->translate('uz')->description : '') }}</textarea> <label for="basic-default-bio">Tavsifi</label>
+                                            <textarea class="form-control h-px-75" id="basic-default-bio" name='uz.[description]' placeholder="Tavsifini kiriting"
+                                                rows="3">{{ old('uz' . '.description') ? old('uz' . '.description') : ($slide->translate('uz') != null ? $slide->translate('uz')->description : '') }}</textarea>
+                                            @error('uz_.description')
+                                                <p class="help-block text-danger">{{ $message }}</p>
+                                            @enderror <label for="basic-default-bio">Tavsifi</label>
+
                                         </div>
                                     </div>
                                 </div>
@@ -53,13 +58,18 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <div class="form-floating form-floating-outline mb-4">
-                                            <textarea class="form-control h-px-75" id="basic-default-bio" name={{ 'ru.[title]' }} placeholder="Тема" rows="3"
-                                                required="">{{ old('ru' . '.title') ? old('ru' . '.title') : ($slide->translate('ru') != null ? $slide->translate('ru')->title : '') }}</textarea>
+                                            <textarea class="form-control h-px-75" id="basic-default-bio" name='ru.[title]' placeholder="Тема" rows="3">{{ old('ru' . '.title') ? old('ru' . '.title') : ($slide->translate('ru') != null ? $slide->translate('ru')->title : '') }}</textarea>
+                                            @error('ru_.title')
+                                                <p class="help-block text-danger">{{ $message }}</p>
+                                            @enderror
                                             <label for="basic-default-bio">Тема</label>
                                         </div>
                                         <div class="form-floating form-floating-outline mb-4">
-                                            <textarea class="form-control h-px-75" id="basic-default-bio" name={{ 'ru.[description]' }} placeholder="Описание"
+                                            <textarea class="form-control h-px-75" id="basic-default-bio" name='ru.[description]' placeholder="Описание"
                                                 rows="3" required="">{{ old('ru' . '.description') ? old('ru' . '.description') : ($slide->translate('ru') != null ? $slide->translate('ru')->description : '') }}</textarea>
+                                            @error('ru_.description')
+                                                <p class="help-block text-danger">{{ $message }}</p>
+                                            @enderror
                                             <label for="basic-default-bio">Описание</label>
                                         </div>
 
@@ -83,8 +93,11 @@
                                     <label for="formFile" class="form-label">Формат (.jpg, .jpeg, .png)</label>
                                     <input class="form-control"
                                         value="{{ asset(old('image') ? old('image') : 'images/' . $slide->image) }}"
-                                        type="file" name="image" id="image" onchange="previewFile()" required
+                                        type="file" name="image" id="image" onchange="previewFile()"
                                         accept="image/png, image/gif, image/jpeg">
+                                    @error('image')
+                                        <p class="help-block text-danger">{{ $message }}</p>
+                                    @enderror
                                 </div>
                             </div>
                             <img src="{{ asset(old('images') ? old('images') : 'images/' . $slide->image) }}"
