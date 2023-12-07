@@ -16,7 +16,10 @@ class TreatmentsController extends Controller
             $slides = Treatments::all();
 
             if (count($slides) > 0) {
-                return $slides;
+                return response()->json([
+                    "status" => true,
+                    "items" => $slides
+                ]);
             } else {
                 return response()->json([
                     "status" => false,
