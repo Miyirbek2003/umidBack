@@ -54,7 +54,7 @@ class OrderController extends Controller
         $data = $request->validate([
             'name' => 'required',
             'phone' => 'required',
-            
+
         ]);
 
         $order = new Order;
@@ -63,7 +63,11 @@ class OrderController extends Controller
             return response()->json(['message' => 'Error']);
         } else {
             $order->name = $data['name'];
-            $order->treatment_id = $data['treatment_id'];
+            if ($order->treatment_id) {
+                $order->treatment_id = $data['treatment_id'];
+            } else {
+                $order->treatment_id = '';
+            }
             $order->phone = $data['phone'];
             $order->save();
         }
