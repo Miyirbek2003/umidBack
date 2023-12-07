@@ -1300,9 +1300,9 @@
             }
         }
     </script>
-    <script src="https://cdn.ckeditor.com/ckeditor5/40.1.0/classic/ckeditor.js"></script>
+    {{-- <script src="https://cdn.ckeditor.com/ckeditor5/40.1.0/classic/ckeditor.js"></script> --}}
 
-    <script>
+    {{-- <script>
         ClassicEditor
             .create(document.querySelector('#editor12'))
             .then(editor => {
@@ -1321,7 +1321,65 @@
             .catch(error => {
                 console.error(error);
             });
-    </script>
+        ClassicEditor.editorConfig = function(config) {
+            config.toolbarGroups = [{
+                    name: 'document',
+                    groups: ['mode', 'document', 'doctools']
+                },
+                {
+                    name: 'clipboard',
+                    groups: ['clipboard', 'undo']
+                },
+                {
+                    name: 'editing',
+                    groups: ['find', 'selection', 'spellchecker', 'editing']
+                },
+                {
+                    name: 'forms',
+                    groups: ['forms']
+                },
+
+                {
+                    name: 'basicstyles',
+                    groups: ['basicstyles', 'cleanup']
+                },
+                {
+                    name: 'paragraph',
+                    groups: ['list', 'indent', 'blocks', 'align', 'bidi', 'paragraph']
+                },
+                {
+                    name: 'links',
+                    groups: ['links']
+                },
+                {
+                    name: 'insert',
+                    groups: ['insert']
+                },
+
+                {
+                    name: 'styles',
+                    groups: ['styles']
+                },
+                {
+                    name: 'colors',
+                    groups: ['colors']
+                },
+                {
+                    name: 'tools',
+                    groups: ['tools']
+                },
+                {
+                    name: 'others',
+                    groups: ['others']
+                },
+                {
+                    name: 'about',
+                    groups: ['about']
+                }
+            ]
+        }
+    </script> --}}
+    <script src="{{ asset('ckeditor/ckeditor.js ') }}"></script>
 
 </body>
 <!-- Mirrored from demos.themeselection.com/materio-bootstrap-html-laravel-admin-template-free/demo/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 28 Nov 2023 06:09:36 GMT -->

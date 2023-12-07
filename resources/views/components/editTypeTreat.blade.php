@@ -65,7 +65,7 @@
                                             </select>
                                         </div>
                                         <div>
-                                            <textarea class="form-control tiny-editor" id="editor12" cols='30' name={{ 'uz.[body]' }} placeholder="Kontent"
+                                            <textarea class="form-control ckeditor" id="post_content" cols='30' name={{ 'uz.[body]' }} placeholder="Kontent"
                                                 rows="10">
                                                 {{ old('uz' . '.body') ? old('uz' . '.body') : ($slide->translate('uz') != null ? $slide->translate('uz')->body : '') }}
 
@@ -97,7 +97,7 @@
                                             </select>
                                         </div>
                                         <div>
-                                            <textarea class="form-control tiny-editor" id="editor21" cols='30' name='ru.[body]' placeholder="Контент"
+                                            <textarea class="form-control ckeditor" id="post_content" cols='30' name='ru.[body]' placeholder="Контент"
                                                 rows="10">
                                                 {{ old('ru' . '.body') ? old('ru' . '.body') : ($slide->translate('ru') != null ? $slide->translate('ru')->body : '') }}
                                             </textarea>

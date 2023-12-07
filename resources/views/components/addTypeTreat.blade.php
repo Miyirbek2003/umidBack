@@ -66,7 +66,7 @@
                                             @enderror
                                         </div>
                                         <div>
-                                            <textarea class="form-control tiny-editor" id="editor12" cols='30' name='uz.[body]' placeholder="Kontent"
+                                            <textarea class="ckeditor form-control" id="post_content" cols='30' name='uz.[body]' placeholder="Kontent"
                                                 rows="10"></textarea>
                                             @error('uz_.body')
                                                 <p class="help-block text-danger">{{ $message }}</p>
@@ -101,7 +101,7 @@
                                             @enderror
                                         </div>
                                         <div>
-                                            <textarea class="form-control tiny-editor" id="editor21" cols='30' name='ru.[body]' placeholder="Контент"
+                                            <textarea class="form-control ckeditor" id="editor21" cols='30' name='ru.[body]' placeholder="Контент"
                                                 rows="10"></textarea>
                                             @error('ru_.body')
                                                 <p class="help-block text-danger">{{ $message }}</p>
@@ -138,4 +138,8 @@
     <script>
         $('.slide2').addClass('active');
     </script>
+@endpush
+
+
+@push('script')
 @endpush
