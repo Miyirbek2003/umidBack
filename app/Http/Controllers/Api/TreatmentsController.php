@@ -23,7 +23,7 @@ class TreatmentsController extends Controller
             } else {
                 return response()->json([
                     "status" => false,
-                    "items" => $slides
+                    "items" => []
                 ]);
             }
         } catch (\Throwable $th) {
