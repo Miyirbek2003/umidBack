@@ -54,7 +54,7 @@ class OrderController extends Controller
         $data = $request->validate([
             'name' => 'required',
             'phone' => 'required',
-            'treatment_id' => 'required',
+            
         ]);
 
         $order = new Order;
