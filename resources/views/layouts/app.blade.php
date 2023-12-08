@@ -1382,7 +1382,58 @@
     <script src="{{ asset('ckeditor/ckeditor.js ') }}"></script>
     <script>
         CKEDITOR.replace('post_content', {
-            extraPlugins = 'youtube';
+
+
+            toolbar: [{
+                    name: 'document',
+                    items: ['Source', '-', 'NewPage', 'Preview', '-', 'Templates']
+                },
+                {
+                    name: 'clipboard',
+                    items: ['Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo']
+                },
+                {
+                    name: 'basicstyles',
+                    items: ['Bold', 'Italic', 'Underline', 'Strike', '-', 'RemoveFormat']
+                },
+                '/',
+                {
+                    name: 'styles',
+                    items: ['Styles', 'Format', 'Font', 'FontSize']
+                },
+                {
+                    name: 'colors',
+                    items: ['TextColor', 'BGColor']
+                },
+                {
+                    name: 'insert',
+                    items: ['Image', 'Table', 'HorizontalRule', 'SpecialChar']
+                },
+                {
+                    name: 'tools',
+                    items: ['Maximize']
+                },
+                {
+                    name: 'others',
+                    items: ['-']
+                },
+                {
+                    name: 'about',
+                    items: ['About']
+                },
+                {
+                    name: 'youtube',
+                    items: ['Youtube']
+                },
+                {
+                    name: 'alignment',
+                    items: ['JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock']
+                },
+
+            ]
+        });
+        CKEDITOR.replace('post_content2', {
+
 
             toolbar: [{
                     name: 'document',
