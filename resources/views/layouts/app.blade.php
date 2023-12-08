@@ -1382,7 +1382,8 @@
     <script src="{{ asset('ckeditor/ckeditor.js ') }}"></script>
     <script>
         CKEDITOR.replace('post_content', {
-
+            extraPlugins: 'image', // Include the 'image' plugin
+            extraPlugins: 'youtube', // Include the 'image' plugin
 
             toolbar: [{
                     name: 'document',
@@ -1433,12 +1434,17 @@
                     name: 'insert',
                     items: ['Iframe']
                 }, // Add 'Iframe' to the toolbar
-
+                {
+                    name: 'insert',
+                    items: ['Image']
+                },
 
             ]
         });
         CKEDITOR.replace('post_content2', {
 
+            extraPlugins: 'image', // Include the 'image' plugin
+            extraPlugins: 'youtube', // Include the 'image' plugin
 
             toolbar: [{
                     name: 'document',
