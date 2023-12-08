@@ -17,15 +17,16 @@ use Illuminate\Support\Facades\Route;
 Route::get('/login', function () {
     return view('auth.login');
 });
+Route::group(['middleware' => ['auth:sanctum']], function () {
+    Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::resource('/slides', App\Http\Controllers\SlideController::class);
+    Route::resource('/employees', App\Http\Controllers\EmployeeController::class);
+    Route::resource('/treatments', App\Http\Controllers\TreatmentsController::class);
+    Route::resource('/typetreatments', App\Http\Controllers\TypeTreatmentsController::class);
+    Route::resource('/feedback', App\Http\Controllers\FeedbackController::class);
+    Route::resource('/imageslide', App\Http\Controllers\ImageSlideController::class);
+    Route::resource('/order', App\Http\Controllers\OrderController::class);
+    Route::get('/zeroorder', [App\Http\Controllers\OrderController::class, 'zeroindex'])->name('zeroindex');
+});
 
 Auth::routes();
-
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::resource('/slides', App\Http\Controllers\SlideController::class);
-Route::resource('/employees', App\Http\Controllers\EmployeeController::class);
-Route::resource('/treatments', App\Http\Controllers\TreatmentsController::class);
-Route::resource('/typetreatments', App\Http\Controllers\TypeTreatmentsController::class);
-Route::resource('/feedback', App\Http\Controllers\FeedbackController::class);
-Route::resource('/imageslide', App\Http\Controllers\ImageSlideController::class);
-Route::resource('/order', App\Http\Controllers\OrderController::class);
-Route::get('/zeroorder', [App\Http\Controllers\OrderController::class, 'zeroindex'])->name('zeroindex');
