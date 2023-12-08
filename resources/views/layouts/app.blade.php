@@ -1382,6 +1382,8 @@
     <script src="{{ asset('ckeditor/ckeditor.js ') }}"></script>
     <script>
         CKEDITOR.replace('post_content', {
+            extraPlugins = 'youtube';
+
             toolbar: [{
                     name: 'document',
                     items: ['Source', '-', 'NewPage', 'Preview', '-', 'Templates']
