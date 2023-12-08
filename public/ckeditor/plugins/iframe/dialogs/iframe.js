@@ -26,7 +26,7 @@
 
                             // Добавьте атрибут 'allow-scripts' здесь
                             attributes: [
-                                ["allow-scripts", "true"] // или ["allow-scripts", "true"]
+                                ["sandbox", "allow-scripts"] // или ["allow-scripts", "true"]
                             ],
 
                             setup: d,
