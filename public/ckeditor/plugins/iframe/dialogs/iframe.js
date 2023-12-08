@@ -15,31 +15,6 @@
                     }]
                 },
                 {
-                    id: "info",
-                    label: a.generalTab,
-                    accessKey: "I",
-                    elements: [
-                        {
-                            type: "vbox",
-                            padding: 0,
-                            children: [
-                                {
-                                    id: "src",
-                                    type: "text",
-                                    label: a.url,
-                                    required: !0,
-
-                                    // В этой части кода происходит создание iframe
-                                    html: '<iframe src="" sandbox="allow-scripts"></iframe>',
-
-                                    setup: d,
-                                    commit: f
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
                     type: "hbox", children: [{ id: "width", type: "text", requiredContent: "iframe[width]", style: "width:100%", labelLayout: "vertical", label: a.width, validate: CKEDITOR.dialog.validate.htmlLength(a.invalidHtmlLength.replace("%1", a.width)), setup: d, commit: f }, {
                         id: "height", type: "text", requiredContent: "iframe[height]", style: "width:100%", labelLayout: "vertical", label: a.height, validate: CKEDITOR.dialog.validate.htmlLength(a.invalidHtmlLength.replace("%1",
                             a.height)), setup: d, commit: f
