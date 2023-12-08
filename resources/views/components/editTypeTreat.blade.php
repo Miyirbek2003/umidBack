@@ -97,7 +97,7 @@
                                             </select>
                                         </div>
                                         <div>
-                                            <textarea class="form-control ckeditor" id="post_content" cols='30' name='ru.[body]' placeholder="Контент"
+                                            <textarea class="form-control ckeditor" id="post_content2" cols='30' name='ru.[body]' placeholder="Контент"
                                                 rows="10">
                                                 {{ old('ru' . '.body') ? old('ru' . '.body') : ($slide->translate('ru') != null ? $slide->translate('ru')->body : '') }}
                                             </textarea>
