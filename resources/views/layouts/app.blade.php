@@ -1380,7 +1380,57 @@
         }
     </script> --}}
     <script src="{{ asset('ckeditor/ckeditor.js ') }}"></script>
+    <script>
+        CKEDITOR.replace('post_content', {
+            toolbar: [{
+                    name: 'document',
+                    items: ['Source', '-', 'NewPage', 'Preview', '-', 'Templates']
+                },
+                {
+                    name: 'clipboard',
+                    items: ['Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo']
+                },
+                {
+                    name: 'basicstyles',
+                    items: ['Bold', 'Italic', 'Underline', 'Strike', '-', 'RemoveFormat']
+                },
+                '/',
+                {
+                    name: 'styles',
+                    items: ['Styles', 'Format', 'Font', 'FontSize']
+                },
+                {
+                    name: 'colors',
+                    items: ['TextColor', 'BGColor']
+                },
+                {
+                    name: 'insert',
+                    items: ['Image', 'Table', 'HorizontalRule', 'SpecialChar']
+                },
+                {
+                    name: 'tools',
+                    items: ['Maximize']
+                },
+                {
+                    name: 'others',
+                    items: ['-']
+                },
+                {
+                    name: 'about',
+                    items: ['About']
+                },
+                {
+                    name: 'youtube',
+                    items: ['Youtube']
+                },
+                {
+                    name: 'alignment',
+                    items: ['JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock']
+                },
 
+            ]
+        });
+    </script>
 </body>
 <!-- Mirrored from demos.themeselection.com/materio-bootstrap-html-laravel-admin-template-free/demo/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 28 Nov 2023 06:09:36 GMT -->
 
