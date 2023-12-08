@@ -13,26 +13,6 @@
                         id: "src", type: "text", label: a.url,
                         required: !0, validate: CKEDITOR.dialog.validate.notEmpty(e.noUrl), setup: d, commit: f
                     }]
-                }, {
-                    type: "vbox",
-                    padding: 0,
-                    children: [
-                        {
-                            id: "src",
-                            type: "text",
-                            label: a.url,
-                            required: !0,
-                            // ... (другие атрибуты iframe)
-
-                            // Добавьте атрибут 'allow-scripts' здесь
-                            attributes: [
-                                ["sandbox", "allow-scripts"] // или ["allow-scripts", "true"]
-                            ],
-
-                            setup: d,
-                            commit: f
-                        }
-                    ]
                 },
                 {
                     type: "hbox", children: [{ id: "width", type: "text", requiredContent: "iframe[width]", style: "width:100%", labelLayout: "vertical", label: a.width, validate: CKEDITOR.dialog.validate.htmlLength(a.invalidHtmlLength.replace("%1", a.width)), setup: d, commit: f }, {
