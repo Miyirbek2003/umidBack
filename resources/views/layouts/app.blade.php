@@ -1429,6 +1429,11 @@
                     name: 'alignment',
                     items: ['JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock']
                 },
+                {
+                    name: 'insert',
+                    items: ['Iframe']
+                }, // Add 'Iframe' to the toolbar
+
 
             ]
         });
@@ -1480,6 +1485,11 @@
                     name: 'alignment',
                     items: ['JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock']
                 },
+                {
+                    name: 'insert',
+                    items: ['Iframe']
+                }, // Add 'Iframe' to the toolbar
+
 
             ]
         });
