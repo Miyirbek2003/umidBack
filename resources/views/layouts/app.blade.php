@@ -1382,12 +1382,12 @@
     <script src="{{ asset('ckeditor/ckeditor.js ') }}"></script>
     <script>
         CKEDITOR.replace('post_content', {
-            extraPlugins: 'image', // Include the 'image' plugin
             extraPlugins: 'youtube', // Include the 'image' plugin
+
 
             toolbar: [{
                     name: 'document',
-                    items: ['Source', '-', 'NewPage', 'Preview', '-', 'Templates']
+                    items: ['-', 'NewPage', 'Preview', '-', 'Templates']
                 },
                 {
                     name: 'clipboard',
@@ -1408,7 +1408,7 @@
                 },
                 {
                     name: 'insert',
-                    items: ['Image', 'Table', 'HorizontalRule', 'SpecialChar']
+                    items: ['HorizontalRule', 'Image', 'Table', 'SpecialChar']
                 },
                 {
                     name: 'tools',
@@ -1434,16 +1434,15 @@
                     name: 'insert',
                     items: ['Iframe']
                 }, // Add 'Iframe' to the toolbar
-                {
-                    name: 'insert',
-                    items: ['Image']
-                },
 
-            ]
+
+            ],
+            extraPlugins: ['youtube', 'easyimage'], // Include the 'image' plugin
+            filebrowserBrowseUrl: '/public/images/',
+            filebrowserUploadUrl: '/public/images/'
         });
         CKEDITOR.replace('post_content2', {
 
-            extraPlugins: 'image', // Include the 'image' plugin
             extraPlugins: 'youtube', // Include the 'image' plugin
 
             toolbar: [{
@@ -1497,7 +1496,9 @@
                 }, // Add 'Iframe' to the toolbar
 
 
-            ]
+            ],
+            filebrowserBrowseUrl: '/public/images/',
+            filebrowserUploadUrl: '/public/images/'
         });
     </script>
 </body>
