@@ -20,7 +20,7 @@ class CreateFeedbackTranslationsTable extends Migration
             $table->foreign('feedback_id')->references('id')->on('feedback')->onDelete('cascade');
             $table->string('locale')->index();
             $table->string('title')->nullable();
-            $table->string('description')->nullable();
+            $table->longText('description')->nullable();
             $table->timestamps();
         });
     }
